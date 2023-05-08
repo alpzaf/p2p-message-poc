@@ -1,3 +1,3 @@
-export const seed = [
+export const seeds = [
     "http://localhost:4000"
 ]
