@@ -1,5 +1,6 @@
 import express from "express";
 import {getRandomSeedServer} from "./getRandomSeedServer";
+import {registerWithSeedServer} from "./registerWithSeedServer";
 
 const PORT = process.env.PORT ?? 3000;
 
@@ -11,8 +12,8 @@ app.listen(PORT, () => {
 })
 
 const initialize = async () => {
-    const randomSeedServer = getRandomSeedServer()
-    console.log(randomSeedServer)
+    const randomSeedServerUri = getRandomSeedServer()
+    await registerWithSeedServer(randomSeedServerUri)
 }
 
 initialize()
